@@ -1,0 +1,21 @@
+*::after::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #0197a1;
+}
+
+.bg-pricing {
+    background: url(../../assets/images/marketing-bg.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bg-service{
+    background: url(../../assets/images/pricing-tab-bg.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+}

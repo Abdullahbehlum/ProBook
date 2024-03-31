@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+    --blue: #1cf0fd;
+    --white: #fff;
+    --headcolor: #2f1f1f;
+    --bodycolor: #212529;
+    --btn-bg: #1cf0fd;
+    --textcolor: #015b71;
+    --ghosthead: #434344;
+}
+
+/* Stripe page is given */
+.bg-stripe {
+    background: url(../../assets/images/banner.webp), no-repeat;
+    background-size: cover;
+    height: 85vh;
+}
+
+.form-control {
+    display: block;
+    padding: .375rem .75rem;
+    color: #495057;
+    border: 1px solid #ced4da !important;
+    background: #fff;
+    background-clip: padding-box;
+    width: 100%;
+    font-size: 1rem;
+    outline-color: #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.form-control:read-only {
+    background: #e9ecef;
+    opacity: 1;
+}
+
+@media (min-width:300px) and (max-width:350px){
+    .bg-stripe {
+        width: device-width;
+        height: auto;
+        overflow: hidden;
+    }
+    .form-control {
+        width: 320px;
+        margin-bottom: 15px;
+    }
+
+}
+@media (min-width:400px) and (max-width:850px){
+    .bg-stripe {
+        width: 420px;
+        height: auto;
+        overflow: hidden;
+    }
+    .form-control {
+        width: 320px;
+        margin-bottom: 15px;
+    }
+
+}
+
+
+/* Stripe page is End */

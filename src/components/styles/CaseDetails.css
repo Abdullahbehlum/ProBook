@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*::after::before {
+    font-family: poppins;
+    margin: 0em;
+    padding: 0em;
+    box-sizing: border-box;
+    scrollbar-width: 0px;
+    overflow-x: hidden !important;
+    max-width: 100%;
+    max-height: 100%;
+    user-select: none;
+}
+
+* {
+    font-family: poppins;
+    scrollbar-width: 0px !important;
+    overflow: -moz-scrollbars-none;
+
+}
+
+:root {
+    --blue: #1cf0fd;
+    --white: #fff;
+    --headcolor: #2f1f1f;
+    --bodycolor: #212529;
+    --btn-bg: #1cf0fd;
+    --textcolor: #015b71;
+    --ghosthead: #434344;
+}
+
+
+
+body {
+    scroll-behavior: smooth;
+    font-family: poppins;
+    transition: all 0.3 ease-in-out;
+    color: var(--bodycolor);
+    scrollbar-width: 0px;
+    line-height: 1.15;
+
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+
+    user-select: none;
+    line-height: 1.5;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body::-webkit-scrollbar-track {
+    display: none;
+}
+
+body::-webkit-scrollbar-thumb {
+    display: none;
+}
+
+@-ms-viewport {
+    width: device-width;
+    height: device-height;
+}
+
+@-moz-document url-prefix() {
+    html {
+        scrollbar-width: none;
+    }
+}
+
+.case_details {
+    background: #1A1A13;
+    overflow: hidden;
+    padding: 90px 0px 50px 0px;
+    @apply flex justify-center xl:px-6 px-4 items-center xl:justify-evenly xl:flex-row flex-col md:flex-row sm:flex-row
+}
+
+.case_data {
+    color: #fff;
+    @apply mx-6 xl:mx-3 xl:w-[90em] w-auto
+}
+
+.case_data h4 {
+    font-size: 23px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.case_data i {
+    font-size: 16px;
+}
+
+.case_data h1 {
+    font-size: 55px;
+    line-height: 59px;
+    font-weight: 600;
+    margin-bottom: 3%;
+}
+
+.case_data span {
+    font-size: 16px;
+    color: var(--blue);
+}
+
+.jeam_details {
+    @apply px-5 xl:px-9
+}
+
+.jeam_details h3 {
+    font-size: 22px;
+    line-height: 35px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.jeam_details p {
+    color: #122826;
+    font-variant: JIS83;
+    font-size: 15px;
+    margin-bottom: 22px;
+    font-family: Poppins;
+}
+@media (max-width: 768px) {
+    .case_data h1 {
+        font-size: 32px;
+        line-height: 33px;
+        font-weight: 700;
+    }
+}

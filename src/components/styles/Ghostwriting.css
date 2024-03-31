@@ -1,0 +1,44 @@
+:root {
+    --primary: #0197a1;
+}
+
+.bg-boast {
+    background: url(../../assets/images/our-shelf.webp) no-repeat center;
+    width: 100%;
+    background-size: cover;
+}
+
+.bg-boast h3 span {
+    color: var(--primary);
+}
+
+.two-gird-col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+    place-content: center;
+    place-items: center;
+}
+.place-box{
+    position: relative;
+    color: #0197a1;
+    font-size: 55px;
+    font-weight: 400;
+}
+.place-box::before {
+    content: '';
+    background: url(../../assets/images/shelf-h5-before.webp);
+    height: 55px;
+    width: 95px;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+@media (max-width:800px) {
+    .two-gird-col {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        @apply mx-4
+    }
+}

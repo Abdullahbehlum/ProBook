@@ -1,0 +1,37 @@
+.bg-hire-prof {
+    background: -webkit-linear-gradient(90deg, #154890, #1d6bda 100%);
+    background-color: rgba(21, 72, 144, .99608);
+    padding: 60px 0 30px;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+
+}
+
+.bg-hire-prof::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -38%;
+    top: 1;
+    background: url(../../../assets/images/cta-before.webp) center/100% no-repeat;
+    background-position-x: -31px;
+    width: 600px;
+    height: 377px;
+    background-size: 70%;
+    @apply hidden xl:block md:block sm:block
+}
+
+.bg-hire-prof::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    transform: translateY(-50%);
+    background: url(../../../assets/images/cta-after.webp) center/cover no-repeat;
+    background-position: right;
+    top: 250px;
+    width: 327px;
+    height: 333px;
+    @apply hidden xl:block md:block sm:block 
+}

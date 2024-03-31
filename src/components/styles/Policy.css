@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*::after::before {
+    font-family: poppins;
+    margin: 0em;
+    padding: 0em;
+    box-sizing: border-box;
+    scrollbar-width: 0px;
+    overflow-x: hidden !important;
+    max-width: 100%;
+    max-height: 100%;
+    user-select: none;
+}
+
+* {
+    font-family: poppins;
+    scrollbar-width: 0px !important;
+    overflow: -moz-scrollbars-none;
+
+}
+
+:root {
+    --blue: #1cf0fd;
+    --white: #fff;
+    --headcolor: #2f1f1f;
+    --bodycolor: #212529;
+    --btn-bg: #1cf0fd;
+    --textcolor: #015b71;
+    --ghosthead: #434344;
+}
+
+.priv_data ul {
+    list-style: disc;
+    padding-left: 30px;
+}
+
+.content-page {
+    background: url(../../assets/images/contact-banner.webp) no-repeat center;
+    background-size: cover;
+    @apply xl:h-[80vh] h-auto
+}
+.content-page h1{
+    font-size: 44px;
+    line-height: 44px;
+    color: #111;
+    
+}

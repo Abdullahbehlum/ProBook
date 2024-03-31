@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*::after::before {
+    font-family: poppins;
+    margin: 0em;
+    padding: 0em;
+    box-sizing: border-box;
+    scrollbar-width: 0px;
+    overflow-x: hidden !important;
+    max-width: 100%;
+    max-height: 100%;
+    user-select: none;
+}
+
+* {
+    font-family: poppins;
+    scrollbar-width: 0px !important;
+    overflow: -moz-scrollbars-none;
+
+}
+
+:root {
+    --blue: #1cf0fd;
+    --white: #fff;
+    --headcolor: #2f1f1f;
+    --bodycolor: #212529;
+    --btn-bg: #1cf0fd;
+    --textcolor: #015b71;
+    --ghosthead: #434344;
+}
+.case-box{
+    padding: 12px 0px 0px 0px;
+    box-shadow: 0 0 18px 0 rgb(0 0 0 / 15%);
+    border-radius: 15px;
+    cursor: pointer;
+    background: white;
+}
+.case_body {
+    padding: 10px 10px;
+}
+
+.case_body h4 {
+    color: var(--textcolor);
+    font-weight: 600;
+    font-size: 19px;
+    cursor: pointer;
+    @apply  mb-2
+}
+/* .case_body span {
+    color: var(--textcolor);
+} */
+.case_body h3 {
+    color: var(--textcolor);
+    font-weight: 600;
+}
+.fa-star {
+    color: orange;
+    @apply px-1
+}
+
+@media (max-width: 767px) {
+.case_body{
+    padding: 15px 15px;
+}
+}

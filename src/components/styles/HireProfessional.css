@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*::after::before {
+    margin: 0em;
+    padding: 0em;
+    box-sizing: border-box;
+    font-family: poppins;
+}
+
+* {
+    margin: 0em;
+    padding: 0em;
+    box-sizing: border-box;
+    font-family: poppins;
+}
+
+:root {
+    --blue: #1cf0fd;
+    --white: #fff;
+    --headcolor: #2f1f1f;
+    --bodycolor: #212529;
+    --btn-bg: #1cf0fd;
+    --textcolor: #015b71;
+    --ghosthead: #434344;
+}
+
+.bg-hire-prof {
+    background: -webkit-linear-gradient(90deg, #154890, #1d6bda 100%);
+    background-color: rgba(21, 72, 144, .99608);
+    padding: 60px 0 30px;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+
+}
+
+.bg-hire-prof::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -38%;
+    top: 1;
+    background: url(../../assets/images/cta-before.webp) center/100% no-repeat;
+    background-position-x: -31px;
+    width: 600px;
+    height: 377px;
+    background-size: 70%;
+    @apply hidden xl:block md:block sm:block
+}
+
+.bg-hire-prof::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    transform: translateY(-50%);
+    background: url(../../assets/images/cta-after.webp) center/cover no-repeat;
+    background-position: right;
+    top: 180px;
+    width: 327px;
+    height: 333px;
+    @apply hidden xl:block md:block sm:block
+}
+
+.book-cols-3 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 30px;
+    place-content: center;
+    overflow: hidden;
+    place-items: center;
+}
+
+.card_effect {
+    background: #f2f2f2;
+    transition: transform .0.4s;
+
+}
+
+.card_effect:hover {
+    background: var(--blue);
+    color: white;
+}
+
+.card_effect figure {
+    position: relative;
+    transition: .5s all;
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 0;
+    margin: auto;
+}
+
+.card_effect img {
+    object-fit: cover;
+    transition: .5s all;
+    height: 245px;
+    transform: scale(1);
+}
+
+.card_effect img:hover {
+    transform: scale(1.1);
+}
+
+img {
+    max-width: 100%;
+}
+
+.card_body {
+    padding: 20px 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    transition: .5s transform;
+    @apply text-center flex flex-col justify-center items-center font-semibold
+}
+.card_body h3{ 
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 670px) {
+    .book-cols-3 {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .card_body {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    .card_effect img {
+        width: 420px;
+    }
+}
