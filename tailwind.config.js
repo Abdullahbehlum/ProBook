@@ -8,11 +8,14 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        iphoneX: "414px"
+      },
       backgroundColor: {
-        darkblue:"#00bcbb",
+        darkblue: "#00bcbb",
       },
       colors: {
-        headcolor:"#015b71"
+        headcolor: "#015b71"
       }
     },
   },

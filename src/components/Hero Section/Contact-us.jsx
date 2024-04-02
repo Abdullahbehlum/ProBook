@@ -54,64 +54,67 @@ function Contactus() {
   };
   return (
     <>
-       <Dialog open={OpenModal}>
-        <DialogActions>
-          <i
-            className="fa-solid fa-xmark text-center flex flex-col justify-center items-center mt-4 xl:mt-0 mr-1 xl:mr-0  bg-[#a44099] w-[30px] h-[30px] p-[1px] rounded-[4px]  cursor-pointer"
-            onClick={() => SetOpenModal(false)}
-          ></i>
-        </DialogActions>
-        <DialogContent>
-          <div className="popupform">
-            <h2 className="text-black xl:text-white font-bold mb-[10px]">
+      <div
+        className={`fixed inset-0 transition-all duration-75  flex xl:justify-start xl:items-start justify-center items-center 
+         xl:my-6 my-24
+ ml-4 xl:mx-0   bg-poup xl:z-[999] z-[60] xl:h-auto h-[480px] xl:w-[850px] w-[330px] ${
+   OpenModal ? "block" : "hidden"
+ } xl:ml-[14em]`}
+      >
+        <div className="popupform xl:py-24 xl:px-12 py-12  px-4 ">
+          <div>
+            <h2 className="text-black xl:text-white head-h2 font-bold mb-5">
               Get Ready To <br />
               Become a Bestseller!
             </h2>
             <form
-              onSubmit={(e) => handleFormSubmit(e)}
+              onSubmit={handleFormSubmit}
               className="xl:py-3 flex flex-col justify-start items-start"
             >
               <input
                 type="text"
-                className=" xl:mb-[20px] mb-[15px] text-black xl:w-[300px] w-full p-[10px] 
-                   border border-[#00838c] focus:border-[#00838c] hover:border-[#00838c] outline-[#00838c]"
+                className="mb-5 text-black xl:w-[380px] w-[290px] p-4 border border-[#00838c] focus:border-[#00838c] hover:border-[#00838c] outline-[#00838c]"
                 placeholder="Name"
                 required
                 value={ClientData.name}
-                onChange={(e) => {
-                  SetClientData({ ...ClientData, name: e.target.value });
-                }}
+                onChange={(e) =>
+                  SetClientData({ ...ClientData, name: e.target.value })
+                }
               />
               <input
                 type="number"
-                className=" xl:mb-[20px] mb-[15px] xl:w-[300px] w-full p-[10px] text-black
-                   border border-[#00838c] focus:border-[#00838c] hover:border-[#00838c] outline-[#00838c]"
+                className="mb-5 xl:w-[380px] w-[290px] p-4 text-black border border-[#00838c] focus:border-[#00838c] hover:border-[#00838c] outline-[#00838c]"
                 placeholder="Number"
                 required
                 value={ClientData.number}
-                onChange={(e) => {
-                  SetClientData({ ...ClientData, number: e.target.value });
-                }}
+                onChange={(e) =>
+                  SetClientData({ ...ClientData, number: e.target.value })
+                }
               />
               <input
                 type="email"
-                className=" xl:mb-[20px] mb-[15px] xl:w-[300px] w-full p-[10px] text-black
-                   border border-[#00838c] focus:border-[#00838c] hover:border-[#00838c] outline-[#00838c]"
+                className="mb-5 xl:w-[380px] w-[290px] p-4 text-black border border-[#00838c] focus:border-[#00838c] hover:border-[#00838c] outline-[#00838c]"
                 placeholder="Email Address"
                 required
                 value={ClientData.email}
-                onChange={(e) => {
-                  SetClientData({ ...ClientData, email: e.target.value });
-                }}
+                onChange={(e) =>
+                  SetClientData({ ...ClientData, email: e.target.value })
+                }
               />
 
-              <button className="popup-btn uppercase xl:relative xl:left-[0.2em] ">
+              <button className="btn xl:w-auto w-[290px] uppercase">
                 Submit
               </button>
             </form>
+            <i
+              className="fa-solid fa-xmark text-center flex justify-center
+         items-center xl:mt-12 mt-6 xl:mx-16 ml-1 mx-5 xl:ml-0 bg-[#a44099] text-white
+          w-[35px] h-[30px] rounded-[4px] cursor-pointer absolute top-0 right-0"
+              onClick={() => SetOpenModal(false)}
+            ></i>
           </div>
-        </DialogContent>
-      </Dialog>{" "}
+        </div>
+      </div>
       <section className="bg-contact">
         <h1 className="head-h2 font-bold  mb-[22px]">
           Contact Us and Get Published

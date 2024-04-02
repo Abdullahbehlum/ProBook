@@ -18,7 +18,6 @@
     font-family: poppins;
     scrollbar-width: 0px !important;
     overflow: -moz-scrollbars-none;
-
 }
 
 :root {
@@ -321,7 +320,17 @@ body::-webkit-scrollbar {
     left: 105%
 }
 
-.css-1t1j96h-MuiPaper-root-MuiDialog-paper {
+
+.bg-poup{
+    background-image: url(./assets/images/popop-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    border-radius: 40px;
+    background-position: 100% 100%;  
+}
+
+/* .css-1t1j96h-MuiPaper-root-MuiDialog-paper {
     background-image: url(./assets/images/popop-bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -340,7 +349,7 @@ body::-webkit-scrollbar {
 
 .css-knqc4i-MuiDialogActions-root {
     color: white;
-}
+} */
 
 .f-col-2 {
     display: grid;
