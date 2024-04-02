@@ -1,0 +1,33 @@
+.bg-poup {
+    background-image: url(../../assets/images/popop-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    border-radius: 40px;
+    background-position: 100% 100%;
+    width: 850px;
+    z-index: 9999 !important;
+}
+
+@media (min-width:300px) and (max-width:399px) {
+    .bg-poup {
+        width: 325px;
+        height: 460px;
+        background-position: 0 0;
+        z-index: 9999 !important;
+
+        margin-left: 18px;
+    }
+}
+
+@media (min-width:400px) and (max-width:800px) {
+    .bg-poup {
+        width: 400px;
+        height: 480px;
+        z-index: 9999 !important;
+
+        background-position: 0 0;
+
+        @apply py-8 px-1
+    }
+}

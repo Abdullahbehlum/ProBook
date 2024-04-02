@@ -20,7 +20,11 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import "./PrintContact.css";
+import "../../styles/Popup.css"
 import { Link } from "react-router-dom";
+import { initializeApp } from "firebase/app";
+import { firebaseConfig } from "../../config/Config";
+import { addDoc, collection, getFirestore } from "firebase/firestore";
 function Bookprint() {
   const SitesLogo = lazy(() => import("../../pages/Page section/GoogleSlider"));
   const Mobile = useMediaQuery("(max-width:800px)");
@@ -37,6 +41,26 @@ function Bookprint() {
     email: "",
     number: "",
   });
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const docRef = await addDoc(collection(db, "clients"), ClientData);
+      console.log(docRef);
+      toast.success("Message send successfully!");
+      SetClientData({ name: "", email: "", number: "" });
+      return true;
+    } catch (error) {
+      toast.error("Failed to submit form. Please try again later.");
+    }
+  };
+  useEffect(() => {
+    setTimeout(() => {
+      SetOpenModal(true);
+    }, 2500);
+  }, []);
   const Testi = lazy(() => import("../other sections/Testimonails"));
   useEffect(() => {
     setTimeout(() => {
@@ -63,58 +87,67 @@ function Bookprint() {
   };
   return (
     <>
-      <Dialog open={OpenModal}>
-        <DialogActions>
-          <i
-            className="fa-solid fa-xmark text-center mt-4 xl:mt-0 mr-2 xl:mr-0 flex flex-col justify-center items-center  bg-[#a44099] w-[30px] h-[30px] p-[1px] rounded-[4px]  cursor-pointer"
-            onClick={() => SetOpenModal(false)}
-          ></i>
-        </DialogActions>
-        <DialogContent>
-          <div className="popupform">
-            <h2 className="text-black font-bold mb-[10px] xl:text-white ">
+      <div
+        className={`fixed inset-0 transition-all duration-75  flex xl:justify-start xl:items-start justify-center items-center 
+         xl:my-6 my-24
+ ml-4 xl:mx-0   bg-poup  ${
+   OpenModal ? "block" : "hidden"
+ } xl:ml-[14em]`}
+      >
+        <div className="popupform xl:py-24 xl:px-12 py-12  px-4 ">
+          <div>
+            <h2 className="text-black xl:text-white head-h2 font-bold mb-5">
               Get Ready To <br />
               Become a Bestseller!
             </h2>
-            <form className="xl:py-3 flex flex-col justify-start items-start">
+            <form
+              onSubmit={handleFormSubmit}
+              className="xl:py-3 flex flex-col justify-start items-start"
+            >
               <input
                 type="text"
-                className=" xl:mb-[20px] mb-[15px] text-black  xl:w-[300px] w-full p-[10px]
-                   border border-[#00838c] focus:border-[#00838c] hover:border-[#00838c] outline-[#00838c]"
+                className="mb-5 text-black xl:w-[380px] w-full p-4 border border-[#00838c] focus:border-[#00838c] hover:border-[#00838c] outline-[#00838c]"
                 placeholder="Name"
                 required
-                onChange={(e) => {
-                  SetClientData({ ...ClientData, name: e.target.value });
-                }}
+                value={ClientData.name}
+                onChange={(e) =>
+                  SetClientData({ ...ClientData, name: e.target.value })
+                }
               />
               <input
                 type="number"
-                className=" xl:mb-[20px] mb-[15px]   p-[10px] text-black xl:w-[300px] w-full
-                   border border-[#00838c] focus:border-[#00838c] hover:border-[#00838c] outline-[#00838c]"
+                className="mb-5 xl:w-[380px] w-full p-4 text-black border border-[#00838c] focus:border-[#00838c] hover:border-[#00838c] outline-[#00838c]"
                 placeholder="Number"
                 required
-                onChange={(e) => {
-                  SetClientData({ ...ClientData, number: e.target.value });
-                }}
+                value={ClientData.number}
+                onChange={(e) =>
+                  SetClientData({ ...ClientData, number: e.target.value })
+                }
               />
               <input
                 type="email"
-                className=" xl:mb-[20px] mb-[15px]   p-[10px] text-black xl:w-[300px] w-full
-                   border border-[#00838c] focus:border-[#00838c] hover:border-[#00838c] outline-[#00838c]"
+                className="mb-5 xl:w-[380px] w-full p-4 text-black border border-[#00838c] focus:border-[#00838c] hover:border-[#00838c] outline-[#00838c]"
                 placeholder="Email Address"
                 required
-                onChange={(e) => {
-                  SetClientData({ ...ClientData, email: e.target.value });
-                }}
+                value={ClientData.email}
+                onChange={(e) =>
+                  SetClientData({ ...ClientData, email: e.target.value })
+                }
               />
 
-              <button className="popup-btn uppercase xl:relative xl:left-[0.2em] ">
+              <button className="btn  uppercase">
                 Submit
               </button>
             </form>
+            <i
+              className="fa-solid fa-xmark text-center flex justify-center
+         items-center xl:mt-12 mt-6 xl:mx-16 ml-1 mx-5 xl:ml-0 bg-[#a44099] text-white
+          w-[35px] h-[30px] rounded-[4px] cursor-pointer absolute top-0 right-0"
+              onClick={() => SetOpenModal(false)}
+            ></i>
           </div>
-        </DialogContent>
-      </Dialog>
+        </div>
+      </div>
       <section className="bg-banner">
         <div className="flex justify-around overflow-hidden text-white items-center xl:flex-row md:flex-row sm:flex-row flex-col py-8 xl:py-3">
           <div className="xl:ml-9 mx-2">

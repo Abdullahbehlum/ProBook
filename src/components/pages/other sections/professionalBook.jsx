@@ -27,10 +27,10 @@ function ProfessionalBook() {
             </p>
           </div>
           <div className="flex justify-center items-center text-center mb-5 xl:mb-0 flex-col">
-            <div className="mb-2">
+            <div className="mb-2 p-[10px] bg-white shadow-xl  rounded-[50%]">
               <img
                 src={Pl2}
-                className="p-[10px] bg-white shadow-xl  rounded-[50%]"
+                className="object-cover"
               />
             </div>
             <h4 className="font-semibold mb-2">APPROVAL FOR TOC</h4>
@@ -56,10 +56,10 @@ function ProfessionalBook() {
             </p>
           </div>
           <div className="flex justify-center items-center text-center flex-col mb-5 xl:mb-0">
-            <div className="mb-2">
+            <div className="mb-2 p-[10px] bg-white shadow-xl rounded-[50%]">
               <img
                 src={Pl4}
-                className="p-[10px] bg-white shadow-xl rounded-[50%]"
+                className="object-cover"
               />
             </div>
             <h4 className="font-semibold mb-2">GLOBAL PUBLISHING</h4>

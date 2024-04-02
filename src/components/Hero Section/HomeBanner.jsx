@@ -7,12 +7,12 @@ import Clush from "../../assets/images/clutch.webp";
 import Sitejob from "../../assets/images/site-jabbar.svg";
 import "../styles/HireProfessional.css";
 import Rating from "../../assets/images/rating-half.webp";
-import { Dialog, DialogActions, DialogContent } from "@mui/material";
 import { Link } from "react-router-dom";
 import { firebaseConfig } from "../config/Config";
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 import { toast } from "react-toastify";
+import "../styles/Popup.css"
 function HomeBanner() {
   const [OpenModal, SetOpenModal] = useState(false);
   const [ClientData, SetClientData] = useState({
@@ -44,10 +44,11 @@ function HomeBanner() {
   }, []);
   return (
     <>
+    {/* xl:z-[999] z-[60] xl:h-auto h-[480px]  xl:w-[850px] w-[400px] */}
       <div
         className={`fixed inset-0 transition-all duration-75  flex xl:justify-start xl:items-start justify-center items-center 
          xl:my-6 my-24
- ml-4 xl:mx-0   bg-poup xl:z-[999] z-[60] xl:h-auto h-[480px]  xl:w-[850px] w-[400px] ${
+ ml-4 xl:mx-0   bg-poup  ${
    OpenModal ? "block" : "hidden"
  } xl:ml-[14em]`}
       >

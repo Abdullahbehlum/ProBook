@@ -321,36 +321,6 @@ body::-webkit-scrollbar {
 }
 
 
-.bg-poup{
-    background-image: url(./assets/images/popop-bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
-    border-radius: 40px;
-    background-position: 100% 100%;  
-}
-
-/* .css-1t1j96h-MuiPaper-root-MuiDialog-paper {
-    background-image: url(./assets/images/popop-bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
-    width: 150em;
-    padding: 20px;
-    border-radius: 40px;
-    background-position: 100% 100%;
-}
-
-.css-ypiqx9-MuiDialogContent-root {
-    overflow: hidden;
-    padding: 1rem;
-
-}
-
-.css-knqc4i-MuiDialogActions-root {
-    color: white;
-} */
-
 .f-col-2 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -361,6 +331,7 @@ body::-webkit-scrollbar {
 }
 
 .popupform h2 {
+
     font-size: 35px;
     line-height: 39px;
     font-weight: 600;

@@ -5,7 +5,7 @@ import { initializeApp } from "firebase/app";
 import { firebaseConfig } from "../../config/Config";
 import { collection, getFirestore } from "firebase/firestore";
 import { toast } from "react-toastify";
-
+import "../../styles/Popup.css"
 function Contact() {
   const [OpenModal, SetOpenModal] = useState(false);
   const [ClientData, SetClientData] = useState({
@@ -49,10 +49,10 @@ function Contact() {
   };
   return (
     <>
-      <div
+        <div
         className={`fixed inset-0 transition-all duration-75  flex xl:justify-start xl:items-start justify-center items-center 
-         xl:my-6 my-24
- ml-4 xl:mx-0   bg-poup xl:z-[999] z-[60] xl:h-auto h-[480px] xl:w-[850px] w-[330px] ${
+        xl:my-6 my-24
+ ml-4 xl:mx-0   bg-poup  ${
    OpenModal ? "block" : "hidden"
  } xl:ml-[14em]`}
       >
@@ -68,7 +68,7 @@ function Contact() {
             >
               <input
                 type="text"
-                className="mb-5 text-black xl:w-[380px] w-[290px] p-4 border border-[#00838c] focus:border-[#00838c] hover:border-[#00838c] outline-[#00838c]"
+                className="mb-5 text-black xl:w-[380px] w-full p-4 border border-[#00838c] focus:border-[#00838c] hover:border-[#00838c] outline-[#00838c]"
                 placeholder="Name"
                 required
                 value={ClientData.name}
@@ -78,7 +78,7 @@ function Contact() {
               />
               <input
                 type="number"
-                className="mb-5 xl:w-[380px] w-[290px] p-4 text-black border border-[#00838c] focus:border-[#00838c] hover:border-[#00838c] outline-[#00838c]"
+                className="mb-5 xl:w-[380px] w-full p-4 text-black border border-[#00838c] focus:border-[#00838c] hover:border-[#00838c] outline-[#00838c]"
                 placeholder="Number"
                 required
                 value={ClientData.number}
@@ -88,7 +88,7 @@ function Contact() {
               />
               <input
                 type="email"
-                className="mb-5 xl:w-[380px] w-[290px] p-4 text-black border border-[#00838c] focus:border-[#00838c] hover:border-[#00838c] outline-[#00838c]"
+                className="mb-5 xl:w-[380px] w-full p-4 text-black border border-[#00838c] focus:border-[#00838c] hover:border-[#00838c] outline-[#00838c]"
                 placeholder="Email Address"
                 required
                 value={ClientData.email}
@@ -97,7 +97,7 @@ function Contact() {
                 }
               />
 
-              <button className="btn xl:w-auto w-[290px] uppercase">
+              <button className="btn  uppercase">
                 Submit
               </button>
             </form>
