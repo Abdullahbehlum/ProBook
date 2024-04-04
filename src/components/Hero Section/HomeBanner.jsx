@@ -12,7 +12,7 @@ import { firebaseConfig } from "../config/Config";
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 import { toast } from "react-toastify";
-import "../styles/Popup.css"
+import "../styles/Popup.css";
 function HomeBanner() {
   const [OpenModal, SetOpenModal] = useState(false);
   const [ClientData, SetClientData] = useState({
@@ -44,15 +44,13 @@ function HomeBanner() {
   }, []);
   return (
     <>
-    {/* xl:z-[999] z-[60] xl:h-auto h-[480px]  xl:w-[850px] w-[400px] */}
+      {/* xl:z-[999] z-[60] xl:h-auto h-[480px]  xl:w-[850px] w-[400px] */}
       <div
-        className={`fixed inset-0 transition-all duration-75  flex xl:justify-start xl:items-start justify-center items-center 
+        className={` transition-all duration-75  flex xl:justify-start xl:items-start justify-center items-center 
          xl:my-6 my-24
- ml-4 xl:mx-0   bg-poup  ${
-   OpenModal ? "block" : "hidden"
- } xl:ml-[14em]`}
+ ml-4 xl:mx-0   bg-poup  ${OpenModal ? "block" : "hidden"} xl:ml-[14em]`}
       >
-        <div className="popupform xl:py-24 xl:px-12 py-12  px-4 ">
+        <div className="popupform xl:py-16 xl:px-12 py-12  px-4 ">
           <div>
             <h2 className="text-black xl:text-white head-h2 font-bold mb-5">
               Get Ready To <br />
@@ -93,9 +91,7 @@ function HomeBanner() {
                 }
               />
 
-              <button className="btn  uppercase">
-                Submit
-              </button>
+              <button className="btn  uppercase">Submit</button>
             </form>
             <i
               className="fa-solid fa-xmark text-center flex justify-center

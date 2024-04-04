@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Suspense, lazy, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import ServiceWriting from "../../../assets/images/wri-edi-simg.webp";
@@ -45,9 +45,10 @@ import { initializeApp } from "firebase/app";
 import { firebaseConfig } from "../../config/Config";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 // Portfolio Book Images import Is end
-import "../../styles/Popup.css"
+import "../../styles/Popup.css";
 function BookWriting() {
   const Mobile = useMediaQuery("(max-width:700px");
+  const PenPage = lazy(() => import("../other sections/Pen"));
   const [PortfolioTabs, SetPortfolioTabs] = useState("all");
   const handleTabsPortfolio = (tabs) => {
     SetPortfolioTabs(tabs);
@@ -93,12 +94,10 @@ function BookWriting() {
   };
   return (
     <>
-   <div
+      <div
         className={`fixed inset-0 transition-all duration-75  flex xl:justify-start xl:items-start justify-center items-center 
          xl:my-6 my-24
- ml-4 xl:mx-0   bg-poup  ${
-   OpenModal ? "block" : "hidden"
- } xl:ml-[14em]`}
+ ml-4 xl:mx-0   bg-poup  ${OpenModal ? "block" : "hidden"} xl:ml-[14em]`}
       >
         <div className="popupform xl:py-24 xl:px-12 py-12  px-4 ">
           <div>
@@ -141,9 +140,7 @@ function BookWriting() {
                 }
               />
 
-              <button className="btn  uppercase">
-                Submit
-              </button>
+              <button className="btn  uppercase">Submit</button>
             </form>
             <i
               className="fa-solid fa-xmark text-center flex justify-center
@@ -153,7 +150,8 @@ function BookWriting() {
             ></i>
           </div>
         </div>
-      </div>      {/* Service Lagacy is given */}
+      </div>{" "}
+      {/* Service Lagacy is given */}
       <section className="prof-bg">
         <div className="flex justify-around items-center xl:flex-row md:flex-row sm:flex-row flex-col">
           <div className="xl:w-[55%] w-[90%]">
@@ -314,7 +312,10 @@ function BookWriting() {
             publishing your book globally.
           </p>
           <button className="nav-btn border-[2px] border-white">
-            <Link to={"javascript:"}> TALK TO AN EXPERT</Link>
+            <Link to={"javascript:"} onClick={handleLiveChatClick}>
+              {" "}
+              TALK TO AN EXPERT
+            </Link>
           </button>
         </div>
       </section>
@@ -376,6 +377,9 @@ function BookWriting() {
           </div>
         </div>
       </section>
+      <Suspense fallback={<></>}>
+        <PenPage />
+      </Suspense>
       {/* Portfolio is given */}
       <section className="bg-portfolio">
         <div>
@@ -456,8 +460,11 @@ function BookWriting() {
                 <img src={Book7} alt="Not found" className="object-cover " />
                 <img src={Book8} alt="Not found" className="object-cover  " />
               </div>
-              <div className="flex flex-col justify-center items-center ">
-                <button className="bg-black-btn xl:w-auto w-[280px] ">
+              <div className="flex flex-col relative justify-center items-center ">
+                <button
+                  onClick={() => SetOpenModal(true)}
+                  className="btn rounded-[40px] xl:w-auto w-[280px] "
+                >
                   Let's started
                 </button>
               </div>

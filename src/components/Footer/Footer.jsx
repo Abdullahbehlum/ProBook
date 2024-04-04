@@ -324,7 +324,9 @@ function Footer() {
         >
           <span className="xl:mx-8 xl:my-2 ">
             © 2022{" "}
-            <span className="text-[#00bcbb] cursor-pointer">The Writers</span>{" "}
+            <span className="text-[#00bcbb] cursor-pointer">
+              Pro Book Writer
+            </span>{" "}
             Tree All Rights Reserved.
           </span>
         </div>

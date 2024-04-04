@@ -11,13 +11,23 @@
     overflow-x: hidden !important;
     max-width: 100%;
     max-height: 100%;
-    user-select: none;
 }
 
 * {
     font-family: poppins;
     scrollbar-width: 0px !important;
     overflow: -moz-scrollbars-none;
+}
+
+::selection {
+    background: #015b71;
+    color: white;
+}
+
+::-moz-selection {
+    background: #015b71;
+    color: white;
+
 }
 
 :root {
@@ -32,6 +42,7 @@
 
 
 
+html,
 body {
     scroll-behavior: smooth;
     font-family: poppins;
@@ -41,6 +52,7 @@ body {
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
     /* user-select: none; */
     line-height: 1.5;
 }
@@ -68,7 +80,7 @@ header {
     background-color: white;
     padding: 20px 0;
     position: relative;
-    z-index: 1;
+    /* z-index: 1; */
     width: device-width;
     overflow: hidden;
     @apply font-normal
@@ -99,7 +111,7 @@ body::-webkit-scrollbar {
     margin-top: 5px;
     color: white;
     position: relative;
-    z-index: 1;
+    /* z-index: 1; */
     text-transform: uppercase;
     overflow: hidden;
 }
@@ -116,7 +128,7 @@ body::-webkit-scrollbar {
     transform: skewX(-30deg);
     opacity: .4;
     transition: .6s all;
-    z-index: -1
+    /* z-index: -1 */
 }
 
 .nav-btn:hover::before {
@@ -130,7 +142,7 @@ body::-webkit-scrollbar {
     border-radius: 8px;
     position: relative;
     text-transform: uppercase;
-    z-index: 1;
+    /* z-index: 1; */
     overflow: hidden;
     border: 2px solid #17333c;
     background-color: #17333c;
@@ -143,7 +155,7 @@ body::-webkit-scrollbar {
     border-radius: 30px;
     text-transform: uppercase;
     position: relative;
-    z-index: 1;
+    /* z-index: 1; */
     overflow: hidden;
     border: 2px solid #000;
 }
@@ -160,7 +172,7 @@ body::-webkit-scrollbar {
     transform: skewX(-30deg);
     opacity: .4;
     transition: .6s all;
-    z-index: -1
+    /* z-index: -1 */
 }
 
 .live-chat:hover::before {
@@ -179,7 +191,7 @@ body::-webkit-scrollbar {
     transform: skewX(-30deg);
     opacity: .4;
     transition: .6s all;
-    z-index: -1
+    /* z-index: -1 */
 }
 
 .all-btn:hover::before {
@@ -195,7 +207,7 @@ body::-webkit-scrollbar {
     background: transparent;
     border: 2px solid #000;
     position: relative;
-    z-index: 1;
+    /* z-index: 1; */
     text-transform: uppercase;
     overflow: hidden;
 }
@@ -244,7 +256,7 @@ body::-webkit-scrollbar {
     transform: skewX(-30deg);
     opacity: .4;
     transition: .6s all;
-    z-index: -1
+    /* z-index: -1 */
 }
 
 .nav-black-btn:hover::before {
@@ -266,7 +278,7 @@ body::-webkit-scrollbar {
     margin-top: 5px;
     cursor: pointer;
     position: relative;
-    z-index: 1;
+    /* z-index: 1; */
     overflow: hidden;
     @apply mx-2
 }
@@ -296,9 +308,9 @@ body::-webkit-scrollbar {
     text-transform: uppercase;
     background: linear-gradient(155deg, #1cf0fd, #015b71);
     color: var(--white);
-    z-index: 1;
     border-radius: 8px;
-    overflow: hidden
+    overflow: hidden;
+    /* z-index: 1; */
 }
 
 .btn::before {
@@ -313,7 +325,7 @@ body::-webkit-scrollbar {
     transform: skewX(-30deg);
     opacity: .4;
     transition: .6s all;
-    z-index: -1
+    /* z-index: -1 */
 }
 
 .btn:hover::before {
@@ -338,6 +350,34 @@ body::-webkit-scrollbar {
     /* margin-bottom: 4%; */
 }
 
+
+.bg-sell-books {
+    background-image: url(./assets/images/section2.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    @apply h-auto xl:h-[70vh] md:h-[75vh] lg:h-[68vh] sm:h-[72vh]
+}
+
+.hire_box {
+    background: white;
+    box-shadow: 0 0 18px 0 rgb(0 0 0 / 15%);
+    padding: 25px 10px;
+    border-radius: 13px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 0.6s all ease-in-out;
+    align-items: center;
+    text-align: center;
+    @apply mx-3 mb-3
+}
+
+.hire_box:hover {
+    transform: scale(1.06);
+}
+
+
+
 .bg-faqs {
     @apply flex flex-col justify-center items-center
 }
@@ -355,6 +395,7 @@ body::-webkit-scrollbar {
     z-index: 1;
     @apply w-[300px] xl:w-[900px] uppercase font-semibold
 }
+
 
 .faqs-btn::before {
     background: #fff;
@@ -430,6 +471,17 @@ section {
     position: relative;
     overflow: hidden;
 }
+
+.test_card {
+    box-shadow: 0 0 12px 1px rgb(0 0 0 / 35%);
+    padding: 20px 30px;
+    background: white;
+
+    border-radius: 5px;
+    /* -webkit-box-shadow: 0 0 18px 0 rgb(0 0 0 / 15%); */
+@apply mx-3
+}
+
 
 .bg-book-edit {
     background-image: url(./assets/images/Herosections.jpg);

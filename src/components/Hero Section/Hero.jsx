@@ -5,6 +5,9 @@ function Hero() {
   const NbcSlider = lazy(() => import("../pages/other sections/NbcSlider"));
   const HireBook = lazy(() => import("../pages/other sections/HireBooks"));
   const BenefitBook = lazy(() => import("../pages/other sections/BenefitBook"));
+  const SellingBooks = lazy(() =>
+    import("../pages/other sections/BestSelling")
+  );
   const ProfesionalBook = lazy(() =>
     import("../pages/other sections/professionalBook")
   );
@@ -14,6 +17,7 @@ function Hero() {
   const HireProfessional = lazy(() =>
     import("../pages/other sections/HireProfes")
   );
+
   const Testimonals = lazy(() =>
     import("../pages/other sections/Testimonails")
   );
@@ -38,6 +42,9 @@ function Hero() {
       </Suspense>
       <Suspense fallback={<></>}>
         <BenefitBook />
+      </Suspense>
+      <Suspense fallback={<></>}>
+        <SellingBooks />
       </Suspense>
       <Suspense fallback={<></>}>
         <HexgonSetion />
