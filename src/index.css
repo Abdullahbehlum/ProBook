@@ -479,7 +479,7 @@ section {
     border-radius: 10px;
 
     /* -webkit-box-shadow: 0 0 18px 0 rgb(0 0 0 / 15%); */
-    @apply mx-3 mb-[10px] h-[260px] xl:my-3 xl:w-auto
+    @apply mx-3 mb-[10px] h-[260px]  xl:h-[285px]  xl:my-3 xl:w-auto
 }
 
 .test_card p {
