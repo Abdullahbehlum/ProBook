@@ -22,7 +22,7 @@ function BestSellingBooks() {
             Best Selling Books
           </h3>
         </div>
-        <div className="xl:mx-24 mb-4 xl:mb-0 mx-4 ">
+        <div className="xl:mx-24 mb-4 xl:mb-0 mx-6 ">
           <Swiper
             slidesPerView={Mobile ? 2 : 4}
             autoplay={true}

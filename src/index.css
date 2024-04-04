@@ -473,13 +473,17 @@ section {
 }
 
 .test_card {
-    box-shadow: 0 0 12px 1px rgb(0 0 0 / 35%);
-    padding: 20px 30px;
+    box-shadow: 0 0 8px 0px rgb(0 0 0 / 35%);
+    padding: 23px 30px;
     background: white;
+    border-radius: 10px;
 
-    border-radius: 5px;
     /* -webkit-box-shadow: 0 0 18px 0 rgb(0 0 0 / 15%); */
-@apply mx-3
+    @apply mx-3 mb-[10px] h-[260px] xl:my-3 xl:w-auto
+}
+
+.test_card p {
+    font-size: 14px;
 }
 
 
@@ -985,6 +989,7 @@ section {
         display: none !important;
     }
 
+   
 
     .big-head {
         font-size: 33px;
